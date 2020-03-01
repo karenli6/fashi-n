@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <script>
+    window.$ = window.jQuery = require('jquery');
+  </script>
+  <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+    integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+    crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="designs.css">
+
+
+
+  <title></title>
+</head>
+<div id="wrapper" class="toggled bg-light">
+  <div id="sidebar-wrapper" class="bg-light">
+    <ul class="sidebar-nav">
+      <li class="sidebar-brand" style=" margin-top: 30px;     font-size: 30px;"> <a href="#">ecoFASHION</a> </li>
+      <li> <a onclick="navChange('home')" href="#" id="" class="active"><i class="fa fa-home"></i>HOME</a> </li>
+      <li> <a onclick="backBtn()" href="#" id=""><i class="fa fa-undo"></i>BACK</a> </li>
+    </ul>
+  </div>
+  <!-- nav bar -->
+  <!--  home page -->
+
+  <div id="page-container">
+    <div class="page">
+      <div id="mySidenav" class="sidenav">
+        <a href="#">Home</a>
+        <a href="#">Back</a>
+
+      </div>
+      <div class="navigation" style="background-color:#c4f2d4;">
+
+      </div>
+      <div class="column-learn" style="background-color:#c4f2d4;padding-top:400px;">
+        <div class="button" id="learn-submit" type="Submit" onclick="navChange('')">Welcome</div>
+      </div>
+
+      <div class="column-compare" style="background-color:#c4f2d4;padding-top:400px">
+        <div class="button2" id="compare-submit" type="Submit" onclick="navChange('moveToCompare')">Learn more!</div>
+
+      </div>
+  
+    </div>
+  </div>
+  <!-- end home page -->
+  <!-- start first compare page-->
+  <div id="page-compare">
+    <div class="compare" style="background-color:#c4f2d4; ">
+
+      <div class="navigationtype" style="background-color:#c4f2d4;">
+
+      </div>
+      <div class="column-comparetype" style="background-color:#c4f2d4;text-align:center;">
+        <div class="wrappertype">
+          <div class="typingtype" style="background-color:#c4f2d4;">
+            <div class="titletype"> Please enter your link! We will scrape all info for you :) </div>
+            <div class="input-fieldstype">
+
+                <div class="itemstype">
+                  <input id="getType" type ="text" style="width:100%;height:40px;border-radius: 10px;margin-bottom:5px;"placeholder = "Enter type of apparel..."></input> <br><br>
+                  </div>
+              <div class="itemstype">
+                 <input id="getLink" type ="text" style="width:100%;height:40px;border-radius: 10px;" placeholder = "Enter link..."></input> <br><br>
+              </div>
+           
+            </div>
+
+            <!-- <div class="button3type" type="submit" onclick="gettingText()">send</div> -->
+            <div class="button3type" type="Submit" onclick="gettingLink()">send</div>
+          </div>
+        </div>
+      </div>
+
+
+    </div>
+  </div>
+  <!-- end first compare page page -->
+    <!-- start second compare page-->
+<!--     
+    <div id="page-compare-second">
+        <div class="compare" style="background-color:#c4f2d4; ">
+    
+          <div class="navigationtype" style="background-color:#c4f2d4;">
+    
+          </div>
+          <div class="column-comparetype" style="background-color:#c4f2d4;text-align:center;">
+            <div class="wrappertype">
+              <div class="typingtype" style="background-color:#c4f2d4;">
+                <div class="titletype"> Clothing B ... </div>
+                <div class="input-fieldstype">
+    
+                    <div class="itemstype">
+                      <input id="getType2" type ="text" style="width:100%;height:40px;border-radius: 10px;margin-bottom:5px;"placeholder = "Enter type of apparel..."></input> <br><br>
+                      </div>
+                  <div class="itemstype">
+                     <input id="getLink2" type ="text" style="width:100%;height:40px;border-radius: 10px;" placeholder = "Enter link..."></input> <br><br>
+                  </div>
+               
+                </div>
+    
+                <div class="button3type" type="Submit" onclick="gettingLink2()">send</div>
+              </div>
+            </div>
+          </div>
+    
+    
+        </div>
+      </div> -->
+      <!-- end second compare page page -->
+
+
+  <!-- start final display page -->
+  <div id="page-container-display" >
+      <div class="page" style="background-color:#c4f2d4; ">
+        <div id="mySidenav" class="sidenav">
+          <a href="#">Home</a>
+          <a href="#">Back</a>
+  
+        </div>
+        <div class="navigation" style="background-color:#c4f2d4;">
+  
+        </div>
+        <div class="column-learn" style="background-color:#c4f2d4;padding-top:400px;">
+          <div class="finalbutton"></div>
+        </div>
+  
+        <div class="column-compare" style="background-color:#c4f2d4;padding-top:400px">
+         <p>Your score is: </p>
+          <div class="button4" id="winner" type="Submit" > </div>
+          <p>GALLONS of water used to make this product! </p>
+        </div>
+        <!-- new row -->
+        <!-- <div class="column-learn" style="background-color:#c4f2d4;padding-top:400px;justify-content:center;">
+          <div class="button" id="learn-submit" type="Submit" onclick="navChange('')">Learn more</div>
+        </div>
+  
+        <div class="column-compare" style="background-color:#c4f2d4;padding-top:400px">
+          <div class="button2" id="compare-submit" type="Submit" onclick="navChange('moveToCompare')">Compare!</div>
+  
+        </div> -->
+        <!-- end of new row -->
+      </div>
+    </div>
+    <!-- end display page -->
+
+  <body>
+
+
+  </body>
+ 
+
+  <script>
+    var backLocation;
+    var firstvalue;
+    var secondvalue;
+
+
+    function backBtn() {
+      navChange(backLocation);
+    }
+    function gettingText() {
+      var x = document.getElementById("getText")
+    }
+    function gettingLink(){
+        type1 = document.getElementById("getType").value;
+        document.getElementById("getLink").innerHTML = type1;
+        link1 = document.getElementById("getLink").value;
+        document.getElementById("getLink").innerHTML = link1;
+
+    
+
+        var info = [type1, link1];
+
+        const { ipcRenderer } = require('electron')
+
+        // send username to main.js 
+        ipcRenderer.send('asynchronous-message', info)
+ 
+        // receive message from main.js
+        ipcRenderer.on('asynchronous-reply', (event, arg) => {
+          console.log(arg);
+          document.getElementById("winner").innerHTML = arg;
+          firstvalue = arg;
+          
+
+        });
+
+        console.log("we got first value "+ firstvalue);
+        navChange("moveToDisplay");
+
+     
+    }
+
+
+
+
+    function navChange(page) {
+      if (page == "moveToCompare") {
+        console.log("moving to compare");
+        $("#page-compare").show();
+        $("#page-container").hide();
+        $("#page-container-display").hide();
+
+        backLocation = "home";
+      }
+      if (page == "home") {
+        console.log("moving to home");
+
+        $("#page-compare").hide();
+        $("#page-container").show();
+        $("#page-container-display").hide();
+
+        backLocation = "home";
+      }
+      if (page=="moveToDisplay"){
+        $("#page-compare").hide();
+        $("#page-container").hide();
+        $("#page-container-display").show();
+      }
+     
+    }
+
+  </script>
+
+
+</html>
