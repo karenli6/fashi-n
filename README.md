@@ -1,4 +1,4 @@
-# EcoCloth
+# fashiøn
 
 About: Electron desktop app that scrapes data about environmental friendliness of retail products
 
